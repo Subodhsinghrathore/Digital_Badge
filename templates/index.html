@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FlaskDigitalBadge {% endblock %}</h1>
+    {% for badge in badges %}
+        <a href="{{ url_for('post', badge_id=badge['id']) }}">
+            <h2>{{ badge['title'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ badge['created'] }}</span>
+        <a href="{{ url_for('edit', id=badge['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

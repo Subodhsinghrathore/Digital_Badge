@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create a New Badge {% endblock %}</h1>
+
+<form method="badge">
+    <div class="form-group">
+        <label for="title">Badge Name</label>
+        <input type="text" name="title"
+               placeholder="Badge Name" class="form-control"
+               value="{{ request.form['title'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Badge Description</label>
+        <textarea name="content" placeholder="Badge Description"
+                  class="form-control">{{ request.form['content'] }}</textarea>
+    </div>
+    <form method="badge">
+        <div class="form-group">
+            <label for="title">Eligible Students</label>
+            <input type="text" name="title"
+                   placeholder="Eligible Students" class="form-control"
+                   value="{{ request.form['title'] }}"></input>
+        </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
